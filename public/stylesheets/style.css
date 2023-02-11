@@ -87,7 +87,7 @@ td {
   text-align: left;
 }
 th {
-  background-color: #5f7dde;
+  background-color: #301802;
   color: white;
 }
 .table-container {
@@ -176,35 +176,16 @@ th {
   font-weight: 100;
   text-decoration: underline;
 }
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
 .btn-new {
   background-color: #45bf55;
   border-color: #45bf55;
   border-radius: 10px;
-  
 }
 .btn-new:hover {
   background-color: #3e8e41;
   border-color: #3e8e41;
+}
+.dropdown-item {
+  padding: 8px;
+  padding-right: 0;
 }
