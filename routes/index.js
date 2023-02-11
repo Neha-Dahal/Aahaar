@@ -9,6 +9,9 @@ const Donations = require("../models/Donations");
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
+router.get("/newhome", function (req, res, next) {
+  res.render("newhome");
+});
 router.get("/cashflows", function (req, res, next) {
   res.render("cashflows");
 });
@@ -38,7 +41,7 @@ router.post("/save-orphanages", async function (req, res, next) {
     contact: req.body.contact,
     location: req.body.location,
   });
-  res.redirect("/");
+  res.redirect("/dashboard");
 });
 router.post("/save-donations", async function (req, res, next) {
   await Donations.insertMany({
@@ -50,7 +53,7 @@ router.post("/save-donations", async function (req, res, next) {
     location: req.body.location,
     timing: req.body.timing,
   });
-  res.redirect("/");
+  res.redirect("/newhome");
 });
 // router.post("/save-cashflows", async function (req, res, next) {
 //   await Cashflows.insertMany({
@@ -61,11 +64,11 @@ router.post("/save-donations", async function (req, res, next) {
 //   });
 //   res.redirect("/history");
 // });
-// router.get("/history", async function (req, res, next) {
-//   const cashflows = await Cashflows.find();
-//   console.log(cashflows);
-//   res.render("history", { cashflowList: cashflows });
-// });
+router.get("/dashboard", async function (req, res, next) {
+  const donations = await Donations.find();
+  console.log(donations);
+  res.render("dashboard", { donationList: donations });
+});
 // router.get("/reports", async function (req, res, next) {
 //   currentDate = new Date();
 //   startDate = new Date(currentDate.getFullYear(), 0, 1);

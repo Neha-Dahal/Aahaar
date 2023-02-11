@@ -198,3 +198,13 @@ th {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+.btn-new {
+  background-color: #45bf55;
+  border-color: #45bf55;
+  border-radius: 10px;
+  
+}
+.btn-new:hover {
+  background-color: #3e8e41;
+  border-color: #3e8e41;
+}
