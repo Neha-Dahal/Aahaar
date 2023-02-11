@@ -3,30 +3,19 @@ const Schema = mongoose.Schema;
 
 const RestaurantsSchema = new Schema(
   {
-    date: {
-      type: Date,
-      required: true,
-    },
-    name:{
-      type:String,
-      required:true,
-    },
-    food: {
+    name: {
       type: String,
       required: true,
     },
-    foodamount: {
+    email: {
       type: String,
-      required: true,
+      unique: true,
+      required: "Please enter your email",
     },
-    location: {
-      type: String,
-      required: true,
-    },
-    timing:{
-      type: String, 
-      required:true,
-    }
+    // password: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );

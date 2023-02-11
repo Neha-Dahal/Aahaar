@@ -7,15 +7,19 @@ const OrphanagesSchema = new Schema(
       type: String,
       required: true,
     },
-    food: {
-      type: String,
+    contact: {
+      type: Number,
       required: true,
+    },
+    email: {
+      type: String,
+      unique: true,
+      required: "Please enter your email",
     },
     location: {
       type: String,
       required: true,
     },
-    
   },
   { timestamps: true }
 );
