@@ -172,7 +172,10 @@ th {
   z-index: 1;
   left: 0;
 }
-
+.signn {
+  font-weight: 100;
+  text-decoration: underline;
+}
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
