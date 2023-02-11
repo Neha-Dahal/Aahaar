@@ -3,6 +3,7 @@ var router = express.Router();
 const Cashflows = require("../models/Cashflows");
 const Restaurants = require("../models/Restaurants");
 const Orphanages = require("../models/Orphanages");
+const Donations = require("../models/Donations");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -17,6 +18,9 @@ router.get("/restaurants", function (req, res, next) {
 router.get("/orphanages", function (req, res, next) {
   res.render("orphanages");
 });
+router.get("/donations", function (req, res, next) {
+  res.render("donations");
+});
 router.post("/save-restaurants", async function (req, res, next) {
   await Restaurants.insertMany({
     //console.log(req.body);
@@ -24,7 +28,7 @@ router.post("/save-restaurants", async function (req, res, next) {
     email: req.body.email,
     // password: req.body.password,
   });
-  res.redirect("/");
+  res.redirect("/donations");
 });
 router.post("/save-orphanages", async function (req, res, next) {
   await Orphanages.insertMany({
@@ -33,6 +37,18 @@ router.post("/save-orphanages", async function (req, res, next) {
     email: req.body.email,
     contact: req.body.contact,
     location: req.body.location,
+  });
+  res.redirect("/");
+});
+router.post("/save-donations", async function (req, res, next) {
+  await Donations.insertMany({
+    //console.log(req.body);
+    name: req.body.name,
+    food: req.body.food,
+    foodamount: req.body.foodamount,
+    contact: req.body.contact,
+    location: req.body.location,
+    timing: req.body.timing,
   });
   res.redirect("/");
 });

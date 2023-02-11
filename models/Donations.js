@@ -1,15 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const RestaurantsSchema = new Schema(
+const DonationsSchema = new Schema(
   {
-    date: {
-      type: Date,
+    name: {
+      type: String,
       required: true,
-    },
-    name:{
-      type:String,
-      required:true,
     },
     food: {
       type: String,
@@ -23,11 +19,11 @@ const RestaurantsSchema = new Schema(
       type: String,
       required: true,
     },
-    timing:{
-      type: String, 
-      required:true,
-    }
+    timing: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("Restaurants", RestaurantsSchema);
+module.exports = mongoose.model("Donations", DonationsSchema);
